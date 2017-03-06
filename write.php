@@ -82,20 +82,17 @@
     </nav>
     <div id="content">
       <article>
+        <p>
+          제목 : <input type="text" name="title" value="제목을 입력하세요."><br />
+        </p>
+        <p>
+          이름 : <input type="text" name="name" value="이름을 입력하세요."><br />
+        </p>
+        <p>
+          본문 : <input type="text" name="description" value="본문을 입력하세요."><br />
+        </p>
+
         <?php
-          if(empty($_GET['id'])){
-            echo "WELCOME";
-          }
-          else {
-            $id = mysqli_real_escape_string($conn,$_GET['id']); //mysqli_real_escape_string() <- 보안상의 이유.
-            $sql = "SELECT * FROM topic WHERE id =".$id;
-            $sql  = 'SELECT topic.id, topic.title, topic.description, user.name, topic.created FROM topic LEFT JOIN user ON topic.author = user.id WHERE topic.id ='.$id;
-            $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_assoc($result);
-            echo '<h2>'.htmlspecialchars($row['title'])."</h2>";
-            echo '<div>'.htmlspecialchars($row['name']).' | '.htmlspecialchars($row['created']).'</div><br />';
-            echo '<div>'.htmlspecialchars($row['description']).'</div><br />';
-          }
         ?>
       </article>
       <input type="button" name="name" value="White" onclick="btn_white()">
