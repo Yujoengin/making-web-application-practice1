@@ -82,15 +82,20 @@
     </nav>
     <div id="content">
       <article>
-        <p>
-          제목 : <input type="text" name="title" value="제목을 입력하세요."><br />
-        </p>
-        <p>
-          이름 : <input type="text" name="name" value="이름을 입력하세요."><br />
-        </p>
-        <p>
-          본문 : <input type="text" name="description" value="본문을 입력하세요."><br />
-        </p>
+        <form class="" action="process.php" method="post">
+          <p>
+            제목 : <input type="text" name="title" value=""><br />
+          </p>
+          <p>
+            이름 : <input type="text" name="name" value=""><br />
+          </p>
+          <p>
+            본문 : <textarea name="description" value="" rows="8" cols="40"></textarea><br />
+          </p>
+          <p>
+            <input type="submit" name="submit" value="전송">
+          </p>
+        </form>
 
         <?php
         ?>
